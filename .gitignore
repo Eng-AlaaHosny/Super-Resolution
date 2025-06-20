@@ -1,0 +1,26 @@
+# Ignore virtual environments and system files
+venv/
+__pycache__/
+*.pyc
+*.log
+*.tmp
+
+# Ignore checkpoints, logs, and large data
+checkpoints/
+*.pth
+*.pt
+*.h5
+*.ckpt
+*.weights
+*.npz
+*.npy
+*.tfrecord
+*.csv
+*.json
+*.zip
+*.tar
+*.tar.gz
+runs/
+logs/
+events.out.tfevents.*
+visualizations/  # optional

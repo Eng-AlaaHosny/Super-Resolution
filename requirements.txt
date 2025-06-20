@@ -1,0 +1,13 @@
+torch
+torchvision
+numpy
+opencv-python
+Pillow
+scikit-image
+pandas
+matplotlib
+seaborn        # if you keep seaborn styling
+PyQt5
+tqdm
+tensorboard    # because train.py uses SummaryWriter
+ 
