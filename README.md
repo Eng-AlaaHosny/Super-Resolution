@@ -55,7 +55,12 @@ Super_Resolution_project/
 └── 📁 visualization_outputs/ # Generated visualizations and metrics
 ```
 
+## 📊 Performance Highlights
+- **4× upscaling** with 3.72 dB PSNR improvement
+- **Real-time inference** (180ms per image)
+- **Lightweight model** (16.7M parameters)  
 ### 4. Setup Project Structure
+
 
 After downloading from Google Drive, organize your local project:
 
