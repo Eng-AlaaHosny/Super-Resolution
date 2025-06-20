@@ -1,3 +1,6 @@
+**📝 Note**: This repository contains only the source code for fast cloning. Large files (datasets, models, results) are hosted on Google Drive due to GitHub size limitations.
+
+
 # Super Resolution Project
 
 ## 🎯 Overview
@@ -15,7 +18,9 @@ super_resolution_project/
 │   ├── train.py           # Training pipeline
 │   └── visualize_sr.py    # Result visualization tools
 ├── requirements.txt        # Python dependencies (in GitHub)
-└── README.md              # This documentation (in GitHub)
+├── README.md              # This documentation (in GitHub)
+└── REPORT
+
 ```
 
 ## 🚀 Quick Start
@@ -54,19 +59,6 @@ Super_Resolution_project/
 
 After downloading from Google Drive, organize your local project:
 
-```bash
-# Create project structure
-mkdir checkpoints data pretrained results tensorboard visualization_outputs
-
-# Extract/copy downloaded folders to your project root:
-# - checkpoints/ → ./checkpoints/
-# - data/ → ./data/
-# - pretrained/ → ./pretrained/
-# - results/ → ./results/
-# - tensorboard/ → ./tensorboard/
-# - visualization_outputs/ → ./visualization_outputs/
-```
-
 **Expected Local Structure After Setup:**
 ```
 SUPER_RESOLUTION_PROJECT/
@@ -97,61 +89,26 @@ SUPER_RESOLUTION_PROJECT/
 python src/app.py
 ```
 
-## 💻 Usage
-
-### Web Interface (Gradio)
-```bash
-python src/app.py
-```
-Opens a web interface for easy image super resolution testing.
-
 ### Training
 ```bash
-python src/train.py
+python src/train.py --data_dir ./data --scale 4 --epochs 300 \
+                   --batch_size 16 --patch_size 128 --lr 2e-4
+
 ```
 
 ### Evaluation
 ```bash
-python src/evaluate.py
+python .\src\evaluate.py --data_dir .\data --model_path weights\checkpoints\best.pth ^
+
 ```
 
 ### Visualization
 ```bash
-python src/visualize_sr.py
+
+python .\src\visualize_sr.py --data_dir .\data --model_path weights\checkpoints\best.pth ^
+
 ```
 
-## 🏗️ Model Architecture
-
-**RRDBNet Features:**
-- **Residual in Residual Dense Blocks** for deep feature extraction
-- **Dense connections** for better gradient flow
-- **4x upscaling** capability
-- **High-quality reconstruction** with perceptual losses
-
-## 📊 Pre-trained Models & Results
-
-The Google Drive contains:
-- **✅ Trained checkpoints** - Ready-to-use model weights
-- **✅ Training results** - Performance metrics and loss curves
-- **✅ Sample outputs** - Before/after super resolution examples
-- **✅ TensorBoard logs** - Detailed training monitoring
-- **✅ Visualization outputs** - Generated comparison images
-
-## 🔧 File Organization
-
-**📱 GitHub Repository (Lightweight):**
-- ✅ Source code (`src/` folder)
-- ✅ Documentation (`README.md`)
-- ✅ Dependencies (`requirements.txt`)
-- ✅ Configuration (`.gitignore`)
-
-**☁️ Google Drive (Large Assets):**
-- 📦 **checkpoints/** - Model weights (`.pth` files)
-- 📦 **data/** - Training & validation datasets (PNG images)
-- 📦 **pretrained/** - Base pre-trained models
-- 📦 **results/** - Training outputs and metrics
-- 📦 **tensorboard/** - Training monitoring logs
-- 📦 **visualization_outputs/** - Generated visualizations
 
 ## 📋 Requirements
 - **Python**: 3.7+
@@ -166,19 +123,6 @@ The Google Drive contains:
 - **PSNR improvements** over traditional interpolation methods
 - **Perceptual quality** enhancement for natural images
 
-## 🛠️ Development
-
-### Key Files Explained
-| File | Purpose | Location |
-|------|---------|----------|
-| `app.py` | Gradio web interface | GitHub |
-| `train.py` | Training pipeline | GitHub |
-| `model.py` | Neural network definitions | GitHub |
-| `rrdbnet.py` | RRDBNet architecture | GitHub |
-| `evaluate.py` | Model evaluation | GitHub |
-| `checkpoints/*.pth` | Trained model weights | Google Drive |
-| `data/` | Training datasets | Google Drive |
-| `results/` | Training outputs | Google Drive |
 
 ### Training Process
 1. Load datasets from `data/train/` and `data/val/`
@@ -199,15 +143,7 @@ The Google Drive contains:
 ## 📈 Results & Metrics
 Sample results, performance comparisons, and training metrics are available in the `results/` and `visualization_outputs/` folders from Google Drive.
 
-## 🤝 Contributing
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/name`)
-3. Commit changes (`git commit -am 'Add feature'`)
-4. Push to branch (`git push origin feature/name`)
-5. Create Pull Request
 
-## 📄 License
-MIT License - see LICENSE file for details.
 
 ## 👤 Author
 **Alaa Hosny**
