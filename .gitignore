@@ -6,15 +6,6 @@ checkpoints/
 weights/
 new_checkpoints/
 
-# Training data and outputs (large folders)
-data/train/
-data/val/
-data/test/
-outputs/
-results/
-logs/
-*.log
-training.log
 
 # Generated visualizations and metrics
 visualization_outputs/
