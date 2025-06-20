@@ -69,20 +69,27 @@ mkdir checkpoints data pretrained results tensorboard visualization_outputs
 
 **Expected Local Structure After Setup:**
 ```
-Super-Resolution/
-├── src/                    # Source code (from GitHub)
-├── checkpoints/            # Model weights (from Google Drive)
-├── data/                   # Datasets (from Google Drive)
-│   ├── train/hr/          # Training images - high resolution
-│   ├── train/lr/          # Training images - low resolution
-│   ├── val/hr/            # Validation images - high resolution
-│   └── val/lr/            # Validation images - low resolution
-├── pretrained/             # Pre-trained models (from Google Drive)
-├── results/                # Training outputs (from Google Drive)
-├── tensorboard/            # Training logs (from Google Drive)
-├── visualization_outputs/  # Generated visualizations (from Google Drive)
-├── requirements.txt
-└── README.md
+SUPER_RESOLUTION_PROJECT/
+├── src/                    # Source code
+│   ├── model.py           # Model architecture and utilities
+│   ├── rrdbnet.py         # RRDBNet implementation
+│   ├── dataset.py         # Dataset handling
+│   ├── train.py           # Training pipeline
+│   ├── evaluate.py        # Evaluation tools
+│   ├── app.py             # GUI application
+│   └── visualize_sr.py    # Visualization utilities
+├── data/                  # Dataset directory
+│   ├── train/            # Training data
+│   └── val/              # Validation data
+├── weights/              # Model checkpoints
+│   ├── checkpoints/      # Training checkpoints
+│   └── pretrained/       # Pre-trained models
+├── outputs/              # Results and logs
+│   ├── val_sr/           # Validation outputs
+│   ├── samples/          # Sample results
+│   └── tensorboard/      # Training logs
+└── visualization_outputs/ # Visualization results
+
 ```
 
 ### 5. Run the Application
