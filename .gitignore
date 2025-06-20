@@ -1,26 +1,54 @@
-# Ignore virtual environments and system files
-venv/
-__pycache__/
-*.pyc
-*.log
-*.tmp
-
-# Ignore checkpoints, logs, and large data
-checkpoints/
+# Model checkpoints and weights
 *.pth
-*.pt
+*.pkl
 *.h5
-*.ckpt
-*.weights
-*.npz
-*.npy
-*.tfrecord
-*.csv
-*.json
-*.zip
-*.tar
-*.tar.gz
-runs/
+checkpoints/
+weights/
+new_checkpoints/
+
+# Training data and outputs (large folders)
+data/train/
+data/val/
+data/test/
+outputs/
+results/
 logs/
-events.out.tfevents.*
-visualizations/  # optional
+*.log
+training.log
+
+# Generated visualizations and metrics
+visualization_outputs/
+*.webp
+*.png
+*.jpg
+*.jpeg
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+env/
+.gradio/
+
+# Build and distribution
+.dist/
+build/
+dist/
+*.egg-info/
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Large compressed files
+*.zip
+*.tar.gz
+*.rar
+
+# Temporary files
+*.tmp
+*.temp
